@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdt3gt3uibk7j"]
+
+[ext_resource type="Script" path="res://GUIScript/GUI/SettingsMenu/SettingsMenu.gd" id="1_o47mp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whl7v"]
+bg_color = Color(0.203922, 0.415686, 0.305882, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qlvt2"]
+font_size = 72
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o47mp")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_whl7v")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -86.0
+offset_right = 71.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "设置"
+label_settings = SubResource("LabelSettings_qlvt2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 362.0
+offset_right = 613.0
+offset_bottom = 393.0
+text = "返回"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

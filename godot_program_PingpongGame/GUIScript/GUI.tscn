@@ -1,0 +1,44 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqgk4tola6loi"]
+
+[ext_resource type="Script" path="res://GUIScript/Core/GUI/GUIViewManager.gd" id="1_o1yiu"]
+[ext_resource type="PackedScene" uid="uid://badanxftuyq42" path="res://Assets/GUI/StartMenu/StartMenu.tscn" id="2_okrgo"]
+[ext_resource type="Script" path="res://GUIScript/Core/GUI/GUIViewConfig.gd" id="3_fmcgq"]
+[ext_resource type="PackedScene" uid="uid://cdt3gt3uibk7j" path="res://Assets/GUI/SettingsMenu/SettingsMenu.tscn" id="4_l4dg2"]
+[ext_resource type="PackedScene" uid="uid://dm4e6m83pisei" path="res://Assets/GUI/OtherMenu/OtherMenu.tscn" id="5_uenfr"]
+[ext_resource type="PackedScene" uid="uid://by7scoroaev2f" path="res://Assets/GUI/GameScene/GameScene.tscn" id="6_vlrbu"]
+[ext_resource type="Script" path="res://GUIScript/Core/LaunchGame.gd" id="6_wood8"]
+
+[sub_resource type="Resource" id="Resource_5kg1b"]
+script = ExtResource("3_fmcgq")
+id = &"StartMenu"
+prefab = ExtResource("2_okrgo")
+
+[sub_resource type="Resource" id="Resource_6i4j4"]
+script = ExtResource("3_fmcgq")
+id = &"SettingsMenu"
+prefab = ExtResource("4_l4dg2")
+
+[sub_resource type="Resource" id="Resource_xprpt"]
+script = ExtResource("3_fmcgq")
+id = &"OtherMenu"
+prefab = ExtResource("5_uenfr")
+
+[sub_resource type="Resource" id="Resource_1v4y0"]
+script = ExtResource("3_fmcgq")
+id = &"GameScene"
+prefab = ExtResource("6_vlrbu")
+
+[node name="GameGUI" type="Node2D"]
+
+[node name="GUIViewManager" type="Node" parent="." node_paths=PackedStringArray("guiRoot")]
+unique_name_in_owner = true
+script = ExtResource("1_o1yiu")
+viewConfigList = Array[ExtResource("3_fmcgq")]([SubResource("Resource_5kg1b"), SubResource("Resource_6i4j4"), SubResource("Resource_xprpt"), SubResource("Resource_1v4y0")])
+guiRoot = NodePath("../GUIRoot")
+
+[node name="GUIRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="LaunchGame" type="Node" parent="."]
+script = ExtResource("6_wood8")

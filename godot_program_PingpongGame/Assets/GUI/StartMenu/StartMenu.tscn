@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://badanxftuyq42"]
+
+[ext_resource type="Script" path="res://GUIScript/GUI/StartMenu/StartMenu.gd" id="1_qs2sk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ppmn"]
+bg_color = Color(0.447059, 0.615686, 0.792157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qlvt2"]
+font_size = 72
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qs2sk")
+metadata/_edit_vertical_guides_ = [577.0]
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ppmn")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 366.0
+offset_right = 566.0
+offset_bottom = 401.0
+text = "开始游戏"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 366.0
+offset_right = 719.0
+offset_bottom = 401.0
+text = "退出游戏"
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 430.0
+offset_right = 566.0
+offset_bottom = 465.0
+text = "设置"
+
+[node name="OtherButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 430.0
+offset_right = 719.0
+offset_bottom = 465.0
+text = "其它"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 436.0
+offset_top = 180.0
+offset_right = 724.0
+offset_bottom = 279.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "开始菜单"
+label_settings = SubResource("LabelSettings_qlvt2")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="OtherButton" to="." method="_on_other_button_pressed"]

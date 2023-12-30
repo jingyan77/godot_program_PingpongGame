@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://cky6nrmdc4tam"]
+
+[ext_resource type="Texture2D" uid="uid://bhsxw40f0bifg" path="res://图片/Sprite-0002.png" id="1_wdq47"]
+[ext_resource type="Script" path="res://地图/Area2D.gd" id="2_8vmuf"]
+[ext_resource type="PackedScene" uid="uid://gew8v5k4lgbw" path="res://小球/area_2d.tscn" id="3_44xtt"]
+[ext_resource type="Script" path="res://地图/Area2D4.gd" id="4_m66uk"]
+[ext_resource type="PackedScene" uid="uid://b3sqdwc8tfir3" path="res://积分场景/node.tscn" id="5_2ik8w"]
+[ext_resource type="PackedScene" uid="uid://cwv661hb8bnpl" path="res://玩家/玩家1/area_2d.tscn" id="6_yfwec"]
+[ext_resource type="PackedScene" uid="uid://c471whkiftfaj" path="res://玩家/玩家2/area_2d.tscn" id="7_50iug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krwlo"]
+size = Vector2(22, 660)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etbpj"]
+size = Vector2(1169, 20)
+
+[node name="Node" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 333)
+scale = Vector2(1.01, 6.6)
+texture = ExtResource("1_wdq47")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_8vmuf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 320)
+shape = SubResource("RectangleShape2D_krwlo")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(1150, 0)
+script = ExtResource("2_8vmuf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1, 320)
+shape = SubResource("RectangleShape2D_krwlo")
+
+[node name="Area2D3" parent="." instance=ExtResource("3_44xtt")]
+position = Vector2(575, 321)
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(4, 4)
+script = ExtResource("4_m66uk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(572.5, 0)
+shape = SubResource("RectangleShape2D_etbpj")
+
+[node name="Area2D5" type="Area2D" parent="."]
+position = Vector2(4, 644)
+script = ExtResource("4_m66uk")
+y = -5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+position = Vector2(572.5, 0)
+shape = SubResource("RectangleShape2D_etbpj")
+
+[node name="Node" parent="." instance=ExtResource("5_2ik8w")]
+metadata/_edit_vertical_guides_ = [119.0]
+
+[node name="Area2D6" parent="." instance=ExtResource("6_yfwec")]
+position = Vector2(103, 325)
+
+[node name="Area2D7" parent="." instance=ExtResource("7_50iug")]
+position = Vector2(1058, 322)

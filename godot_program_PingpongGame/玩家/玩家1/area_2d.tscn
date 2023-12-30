@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwv661hb8bnpl"]
+
+[ext_resource type="Script" path="res://Area2D.gd" id="1_a6y5o"]
+[ext_resource type="Texture2D" uid="uid://darul5c5n85fk" path="res://图片/Sprite-0003.png" id="2_e8e6b"]
+[ext_resource type="AudioStream" uid="uid://nau1qniuipfc" path="res://音乐/qiaoda.mp3" id="3_vneio"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pl6um"]
+size = Vector2(36.5313, 70.125)
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(14, 45)
+script = ExtResource("1_a6y5o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -4)
+texture = ExtResource("2_e8e6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.734375, -6)
+shape = SubResource("RectangleShape2D_pl6um")
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vneio")

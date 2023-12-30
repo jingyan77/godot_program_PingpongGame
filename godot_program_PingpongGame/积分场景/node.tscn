@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3sqdwc8tfir3"]
+
+[ext_resource type="Script" path="res://积分场景/Label.gd" id="1_jykve"]
+[ext_resource type="Script" path="res://积分场景/Label2.gd" id="2_dxjkq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_88omj"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_cvcl3"]
+font_size = 36
+
+[node name="Node" type="Node"]
+metadata/_edit_horizontal_guides_ = [79.0]
+metadata/_edit_vertical_guides_ = [119.0, 1032.0]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 118.0
+offset_top = 78.0
+offset_right = 178.0
+offset_bottom = 138.0
+label_settings = SubResource("LabelSettings_88omj")
+script = ExtResource("1_jykve")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 972.0
+offset_top = 79.0
+offset_right = 1032.0
+offset_bottom = 139.0
+label_settings = SubResource("LabelSettings_cvcl3")
+script = ExtResource("2_dxjkq")
